@@ -1,9 +1,9 @@
-
+import {RandomMeal} from './components';
 
 function App() {
   return (
     <div className="App">
-      yo
+      <RandomMeal />
     </div>
   );
 }
