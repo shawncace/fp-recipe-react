@@ -38,11 +38,17 @@ const RandomMeal = () => {
 
     return (  
         <div>
+            
+
+            {meal ? (<div>{meal.strMeal}</div>):(
+
+            <>
             <input onChange={(event)=>setSearchValue(event.target.value)}/>
 
             <button onClick={handleClick}>Go</button>
-
-            {meal && <div>hi</div>}
+            </>
+            )}
+            
         </div>
         
     );
