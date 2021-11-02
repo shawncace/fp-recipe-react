@@ -9,24 +9,47 @@ const RandomMeal = () => {
         try{
         const response = await fetch(API_URL)
         const data = await response.json()
-        console.log(data)
-        console.log(data.meals[0].strMeal)
+            console.log(data)
+            console.log(data.meals[0].strMeal)
         setMeal(data.meals[0])
-        }catch(error){
+        } catch(error){
             console.log(error)
         }
+    };
 
-    
-    }
     useEffect(()=>{
         getMealRequest()
-    },[])
+    },[]);
+
+    const{
+        strMeal,
+        strMealThumb,
+        strInstructions,
+        strArea,
+        strCategory
+    } = meal;
+    
 
     return (  
-        <> 
-         <div>Random Meal</div>
-         <h1>meal.strMeal</h1>
-        </>
+        <div className='meal'> 
+         <div className='img-container'>
+             <img src={strMealThumb} alt={strMeal} />
+         </div>
+         <div>
+             <h2>{strMeal}</h2>
+             <p>{strInstructions}</p>
+             <ul>
+                 <li>
+                     Category:
+                     <strong>{strCategory}</strong>
+                 </li>
+                 <li>
+                     Area:
+                    <strong>{strArea}</strong>
+                 </li>
+             </ul>
+         </div>
+        </div>
         
     );
 }
