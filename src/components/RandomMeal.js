@@ -36,9 +36,9 @@ const RandomMeal = () => {
              <img src={strMealThumb} alt={strMeal} />
          </div>
          <div>
-             <h2>{strMeal}</h2>
-             <p>{strInstructions}</p>
-             <ul>
+             <h2 className='meal-title'>{strMeal}</h2>
+             <p className='meal-instruction'>{strInstructions}</p>
+             <ul className='meal-info'>
                  <li>
                      Category:
                      <strong>{strCategory}</strong>

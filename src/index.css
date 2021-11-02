@@ -10,3 +10,12 @@ body {
   background-color: #c4a4d4;
   font-family: "Poppins", sans-serif;
 }
+
+.container {
+  max-width: 100%;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.meal {
+}
