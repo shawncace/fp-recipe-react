@@ -19,10 +19,10 @@ const RandomMeal = () => {
         } catch(error){
             console.log(error)
         }
-        
+       
     };
 
-    
+       
 
     function handleClick(){
         getMealRequest(searchValue)
@@ -41,6 +41,8 @@ const RandomMeal = () => {
             <input onChange={(event)=>setSearchValue(event.target.value)}/>
 
             <button onClick={handleClick}>Go</button>
+
+            {meal && <div>hi</div>}
         </div>
         
     );
