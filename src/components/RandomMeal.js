@@ -1,42 +1,47 @@
 import { useState, useEffect } from "react";
 
-const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=sloppy joe';
+
 
 const RandomMeal = () => {
     const [meal, setMeal]=useState(undefined)
+    const[searchValue, setSearchValue]=useState('')
+    
 
-    const getMealRequest = async()=>{
+    const getMealRequest = async(searchValue)=>{
+        const API_URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`;
+        console.log(API_URL)
         try{
         const response = await fetch(API_URL)
         const data = await response.json()
             console.log(data)
             console.log(data.meals[0].strMeal)
-        setMeal(data.meals[0])
+            setMeal(data.meals[0])
         } catch(error){
             console.log(error)
         }
         
     };
 
-    useEffect(()=>{
-        getMealRequest()
-    },[]);
+    
+
+    function handleClick(){
+        getMealRequest(searchValue)
+        
+    }
 
     
 
-    /* const{
-        strMeal,
-        strMealThumb,
-        strInstructions,
-        strArea,
-        strCategory
-    } = meal; */
+    
 
     
     
 
     return (  
-        <div></div>
+        <div>
+            <input onChange={(event)=>setSearchValue(event.target.value)}/>
+
+            <button onClick={handleClick}>Go</button>
+        </div>
         
     );
 }
