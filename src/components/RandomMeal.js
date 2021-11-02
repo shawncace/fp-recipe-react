@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const API_URL = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
 const RandomMeal = () => {
-    const [meal, setMeal]=useState(undefined)
+    const [meal, setMeal]=useState({})
 
     const getMealRequest = async()=>{
         try{
@@ -15,6 +15,7 @@ const RandomMeal = () => {
         } catch(error){
             console.log(error)
         }
+        
     };
 
     useEffect(()=>{
@@ -31,25 +32,31 @@ const RandomMeal = () => {
     
 
     return (  
+        <>
+        {meal ? (
+        
         <div className='meal'> 
          <div className='img-container'>
-             <img src={strMealThumb} alt={strMeal} />
+             <img src={meal.strMealThumb} alt={meal.strMeal} />
          </div>
-         <div>
+         <div className='meal-details'>
              <h2 className='meal-title'>{strMeal}</h2>
-             <p className='meal-instruction'>{strInstructions}</p>
+             <p className='meal-instruction'>{strInstructions.substring(0, 100)}</p>
              <ul className='meal-info'>
                  <li>
                      Category:
-                     <strong>{strCategory}</strong>
+                     <strong>{meal.strCategory}</strong>
                  </li>
                  <li>
                      Area:
-                    <strong>{strArea}</strong>
+                    <strong>{meal.strArea}</strong>
                  </li>
              </ul>
          </div>
-        </div>
+        </div>):(
+            null
+        )}
+        </>
         
     );
 }

@@ -18,4 +18,17 @@ body {
 }
 
 .meal {
+  display: flex;
+}
+
+.img-container {
+  flex: 1;
+}
+
+.img-container img {
+  max-width: 100%;
+}
+
+.meal-details {
+  flex: 2;
 }
