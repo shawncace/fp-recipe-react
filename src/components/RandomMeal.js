@@ -41,7 +41,7 @@ const RandomMeal = () => {
          </div>
          <div className='meal-details'>
              <h2 className='meal-title'>{strMeal}</h2>
-             <p className='meal-instruction'>{strInstructions.substring(0, 100)}</p>
+             <p className='meal-instruction'>{strInstructions.substring(0, 150) + '...'}</p>
              <ul className='meal-info'>
                  <li>
                      Category:

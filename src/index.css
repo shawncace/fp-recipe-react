@@ -11,14 +11,24 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+h2 {
+  display: inline-block;
+  color: #111;
+}
+
 .container {
   max-width: 100%;
   width: 800px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .meal {
   display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
 }
 
 .img-container {
@@ -27,8 +37,38 @@ body {
 
 .img-container img {
   max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .meal-details {
   flex: 2;
+  padding: 30px;
+}
+
+.meal-title {
+  margin: 0 0 20px;
+  color: #351898;
+}
+
+.meal-instruction {
+  font-size: 14px;
+}
+
+.meal-info {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.meal-info li {
+  margin-right: 30px;
+  font-size: 14px;
+  color: rgb(95, 95, 95);
+}
+
+.meal-info li strong {
+  display: block;
+  color: #351898;
+  font-size: 18px;
 }
