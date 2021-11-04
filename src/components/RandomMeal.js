@@ -41,7 +41,7 @@ const RandomMeal = () => {
          </div>
          <div className='meal-details'>
              <h2 className='meal-title'>{strMeal}</h2>
-             <p className='meal-instruction'>{strInstructions.substring(0, 150) + '...'}</p>
+             <p className='meal-instruction'>{strInstructions/* .substring(0, 150) + '...'*/} </p>
              <ul className='meal-info'>
                  <li>
                      Category:
@@ -52,6 +52,9 @@ const RandomMeal = () => {
                     <strong>{meal.strArea}</strong>
                  </li>
              </ul>
+
+             <button className='btn'>View Recipe <i className='fas fa-arrow-right'></i>
+             </button>
          </div>
         </div>):(
             null
