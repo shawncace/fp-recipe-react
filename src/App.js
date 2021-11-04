@@ -7,6 +7,8 @@ function App() {
         <h2>Featured Meal</h2>
         <RandomMeal />
       </section>
+
+      
       
     </div>
   );
